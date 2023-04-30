@@ -12,7 +12,6 @@ export class CarsController {
 
   @Get(':id')
   getById(@Param('id', ParseIntPipe) id: number) {
-    throw new Error('Auxilio');
     console.log({ id });
     return this.carService.findOneById(id);
   }
