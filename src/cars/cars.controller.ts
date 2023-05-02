@@ -15,6 +15,7 @@ import { CarsService } from './cars.service';
 import { CreateCartDto } from './dto/create-car.dto';
 
 @Controller('cars')
+@UsePipes(ValidationPipe)
 export class CarsController {
   constructor(private readonly carService: CarsService) {}
 
@@ -30,7 +31,6 @@ export class CarsController {
   }
 
   @Post()
-  @UsePipes(ValidationPipe)
   createCar(@Body() createCartDto: CreateCartDto) {
     console.log(ValidationPipe);
     return {
