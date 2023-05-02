@@ -75,4 +75,8 @@ export class CarsService {
       status: `Car with id '${id}' deleted`,
     };
   }
+
+  fillCarsWithSeedDate(cars: Car[]) {
+    this.cars = cars;
+  }
 }
